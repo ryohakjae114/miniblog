@@ -20,6 +20,7 @@ end
 
 group :development do
   gem 'haml_lint'
+  # NOTE: rails haml:erb2hamlをするために必要だった
   gem 'html2haml'
   gem 'sgcop', github: 'SonicGarden/sgcop'
   gem 'web-console'
