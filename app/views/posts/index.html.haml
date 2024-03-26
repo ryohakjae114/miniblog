@@ -1,0 +1,5 @@
+- @posts.each do |post|
+  .card
+    .card-body
+      %h2= post.body
+      %p.text-end.mb-0= l post.created_at
