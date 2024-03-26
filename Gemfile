@@ -4,6 +4,7 @@ gem 'rails'
 
 gem 'bootsnap', require: false
 gem 'cssbundling-rails'
+gem 'faker'
 gem 'haml-rails'
 gem 'jsbundling-rails'
 gem 'pg', '~> 1.1'
