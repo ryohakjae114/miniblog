@@ -1,0 +1,4 @@
+= render 'layouts/error_message', resource: @post
+= simple_form_for @post do |f|
+  = f.input :body
+  = f.button :submit
