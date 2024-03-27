@@ -93,8 +93,6 @@ jobs:
           path: log/test.log
         if: always()
 
-      - uses: k1LoW/octocov-action@v0
-
       - name: Archive coverage artifacts
         uses: actions/upload-artifact@v4
         with:
