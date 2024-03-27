@@ -1,5 +1,3 @@
 10.times do
-  sentence = Faker::Lorem.paragraph(sentence_count: 7)
-  sentence = Faker::Lorem.paragraph(sentence_count: 7) while sentence.length > 140
-  Post.create(body: sentence)
+  Post.create(body: Faker::Lorem.paragraph_by_chars(number: rand(10..140)))
 end
