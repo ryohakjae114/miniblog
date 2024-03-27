@@ -1,0 +1,19 @@
+name: Changed Line
+on:
+  pull_request:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v4
+
+      - uses: aki77/changed-lines-number-action@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
