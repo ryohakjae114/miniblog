@@ -16,6 +16,7 @@ gem 'stimulus-rails'
 gem 'turbo-rails'
 
 group :development, :test do
+  gem 'brakeman'
   gem 'debug', platforms: %i[mri windows]
 end
 

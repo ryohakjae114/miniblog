@@ -60,7 +60,7 @@ jobs:
           DISABLE_SPRING: 1
           COVERAGE: true
         run: |
-          bin/rspec -f j -o tmp/rspec_results.json -f p
+          bundle exec rspec -f j -o tmp/rspec_results.json -f p
 
       - name: RSpec Report
         uses: SonicGarden/rspec-report-action@v3
