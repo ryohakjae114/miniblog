@@ -17,6 +17,8 @@ gem 'turbo-rails'
 
 group :development, :test do
   gem 'brakeman'
+  gem 'brakeman_translate_checkstyle_format'
+  gem 'bundler-audit'
   gem 'debug', platforms: %i[mri windows]
 end
 
