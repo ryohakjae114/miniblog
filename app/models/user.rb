@@ -1,6 +1,9 @@
 class User < ApplicationRecord
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+
+  validates :name, presence: true, length: { maximum: 20 },
+                   format: { with: /\A[a-zA-Z]+\z/, message: '英文字のみが使えます。スペースも禁止です。' }
+  validates :profile, length: { maximum: 200 }
+  validates :external_blog_url, length: { maximum: 2083 }
 end
