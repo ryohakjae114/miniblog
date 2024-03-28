@@ -2,6 +2,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  has_many :posts, dependent: :destroy
+
   validates :name, presence: true, length: { maximum: 20 },
                    format: { with: /\A[a-zA-Z]+\z/, message: '英文字のみが使えます。スペースも禁止です。' }
   validates :profile, length: { maximum: 200 }
