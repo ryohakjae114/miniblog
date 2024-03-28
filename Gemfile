@@ -4,6 +4,7 @@ gem 'rails'
 
 gem 'bootsnap', require: false
 gem 'cssbundling-rails'
+gem 'devise'
 gem 'faker'
 gem 'haml-rails'
 gem 'jsbundling-rails'
