@@ -1,0 +1,15 @@
+runner:
+  rubocop:
+    cmd: bundle exec rubocop
+    level: warning
+    format: rubocop
+
+  haml-lint:
+    cmd: bundle exec haml-lint --reporter checkstyle
+    level: warning
+    format: checkstyle
+
+  brakeman:
+    cmd: bundle exec brakeman --except ReverseTabnabbing -f json | bundle exec brakeman_translate_checkstyle_format translate
+    level: warning
+    format: checkstyle

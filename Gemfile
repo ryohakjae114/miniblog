@@ -16,13 +16,17 @@ gem 'stimulus-rails'
 gem 'turbo-rails'
 
 group :development, :test do
+  gem 'brakeman'
+  gem 'brakeman_translate_checkstyle_format'
+  gem 'bundler-audit'
   gem 'debug', platforms: %i[mri windows]
+  gem 'rspec-rails'
+  gem 'sgcop', github: 'SonicGarden/sgcop'
 end
 
 group :development do
   gem 'haml_lint'
   # NOTE: rails haml:erb2hamlをするために必要だった
   gem 'html2haml'
-  gem 'sgcop', github: 'SonicGarden/sgcop'
   gem 'web-console'
 end
