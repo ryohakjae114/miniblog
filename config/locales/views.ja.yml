@@ -1,0 +1,5 @@
+ja:
+  devise:
+    registrations:
+      new:
+        title: "アカウント作成"
