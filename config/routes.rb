@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-  devise_for :users
   get 'up' => 'rails/health#show', as: :rails_health_check
 
-  resources :posts, only: %i[index new create]
+  devise_for :users
+  root 'posts#index'
+  resources :posts, only: %i[new create]
 end
