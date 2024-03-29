@@ -14,6 +14,6 @@ jobs:
       - name: Checkout Repo
         uses: actions/checkout@v4
 
-      - uses: aki77/changed-lines-number-action@v2
+      - uses: aki77/changed-lines-number-action@v3
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
