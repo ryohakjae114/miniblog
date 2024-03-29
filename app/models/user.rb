@@ -5,7 +5,7 @@ class User < ApplicationRecord
   has_many :posts, dependent: :destroy
 
   validates :name, presence: true, length: { maximum: 20 },
-                   format: { with: /\A[a-zA-Z]+\z/, message: '英文字のみが使えます。スペースも禁止です。' }
+                   format: { with: /\A[a-zA-Z]+\z/, message: I18n.t('activerecord.validates.user.name.format') }
   validates :profile, length: { maximum: 200 }
   validates :external_blog_url, length: { maximum: 2083 }
 
