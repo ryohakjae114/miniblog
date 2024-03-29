@@ -4,3 +4,6 @@
   = f.input :password
   = f.input :remember_me, as: :boolean
   = f.button :submit
+
+= link_to t('devise.registrations.new.title'), new_user_registration_path,
+          class: 'd-block mt-4'
