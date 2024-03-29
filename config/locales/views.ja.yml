@@ -3,3 +3,5 @@ ja:
     registrations:
       new:
         title: "アカウント作成"
+      user:
+        signed_up: "アカウントを登録しました。"
