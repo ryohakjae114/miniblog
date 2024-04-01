@@ -1,9 +1,9 @@
-%h2 Log in
-= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-  .form-inputs
-    = f.input :name
-    = f.input :password
-    = f.input :remember_me, as: :boolean if devise_mapping.rememberable?
-  .form-actions
-    = f.button :submit, "Log in"
-= render "devise/shared/links"
+%h2= t('devise.sessions.new.title')
+= simple_form_for(resource, url: session_path(resource_name)) do |f|
+  = f.input :name
+  = f.input :password
+  = f.input :remember_me, as: :boolean
+  = f.button :submit
+
+= link_to t('devise.registrations.new.title'), new_user_registration_path,
+          class: 'd-block mt-4'

@@ -1,7 +1,11 @@
 ja:
+  time:
+    formats:
+      default: "%Y/%m/%d %H:%M:%S"
   devise:
     registrations:
       new:
         title: "アカウント作成"
-      user:
-        signed_up: "アカウントを登録しました。"
+    sessions:
+      new:
+        title: "ログイン"

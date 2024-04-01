@@ -1,4 +1,4 @@
-- flash.each do |_, message|
-  .alert.alert-success.fade.show.alert-dismissible
+- flash.each do |message_type, message|
+  .alert.fade.show.alert-dismissible{ class: class_names(message_type == 'notice' ? 'alert-success' : 'alert-danger') }
     = message
     %button.btn-close{ 'aria-label' => 'Close', 'data-bs-dismiss' => 'alert', type: 'button' }

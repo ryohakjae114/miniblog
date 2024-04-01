@@ -6,3 +6,6 @@
   = f.input :password
   = f.input :password_confirmation
   = f.button :submit
+
+= link_to t('devise.sessions.new.title'), new_user_session_path,
+          class: 'd-block mt-4'
