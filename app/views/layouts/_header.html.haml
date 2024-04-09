@@ -1,0 +1,9 @@
+%header.navbar.bg-body-tertiary.mb-4.d-flex.px-5
+  = link_to 'miniblog', root_path, class: 'fs-2 text-decoration-none'
+  - if user_signed_in?
+    = button_to 'ログアウト', destroy_user_session_path,
+                { method: :delete,
+                  form: { data: { turbo_confirm: 'ログアウトしますか？' } },
+                  class: 'btn text-decoration-none text-primary' }
+  - else
+    = link_to 'ログイン', new_user_session_path, class: 'text-decoration-none'
