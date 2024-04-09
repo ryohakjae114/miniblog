@@ -11,6 +11,9 @@ ja:
         hint:
           password: "新しいパスワード"
           password_confirmation: "新しいパスワード(確認用)"
+        user_registration_path:
+          text: "アカウント削除"
+          confirm: "本当にアカウントを削除しますか？"
     sessions:
       new:
         title: "ログイン"

@@ -1,7 +1,12 @@
 %h2= t('devise.registrations.edit.title')
 
-= render 'layouts/error_message', resource:
-= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
+= render('layouts/error_message', resource:)
+= button_to t('devise.registrations.edit.user_registration_path.text'), user_registration_path,
+            { method: :delete,
+              form: { data: { turbo_confirm: t('devise.registrations.edit.user_registration_path.confirm') } },
+              class: 'btn btn-danger float-end' }
+
+= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, class: 'mt-5' }) do |f|
   = f.input :name
   = f.input :profile
   = f.input :external_blog_url
