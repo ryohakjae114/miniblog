@@ -2,6 +2,8 @@ ja:
   time:
     formats:
       default: "%Y/%m/%d %H:%M:%S"
+  header:
+    user_dropdown: "ユーザ情報"
   devise:
     registrations:
       new:
@@ -17,3 +19,6 @@ ja:
     sessions:
       new:
         title: "ログイン"
+      destroy:
+        title: "ログアウト"
+        confirm: "ログアウトしますか？"
