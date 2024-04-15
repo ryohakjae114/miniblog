@@ -6,7 +6,7 @@ RSpec.describe 'Posts', type: :system do
   end
 
   context '未ログイン時' do
-    it '投稿作成にアクセするとサインインページにリダイレクトすること' do
+    it '投稿作成にアクセスするとサインインページにリダイレクトすること' do
       visit new_post_path
       expect(page).to have_current_path new_user_session_path
     end
