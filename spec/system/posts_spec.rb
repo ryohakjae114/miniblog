@@ -30,7 +30,7 @@ RSpec.describe 'Posts', type: :system do
     end
 
     it '一覧できること' do
-      visit posts_path
+      visit root_path
       expect(page).to have_content(post.body)
     end
   end
