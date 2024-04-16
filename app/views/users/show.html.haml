@@ -1,2 +1,13 @@
-%h1 Users#show
-%p Find me in app/views/users/show.html.haml
+%h1.fs-2= t('users.edit.title')
+
+.container.bg-light-subtle.border.container.mt-5.p-4.rounded-3.text-break
+  .mb-3
+    %h2= t('activerecord.attributes.user.name')
+    %p= @user.name
+
+  .mb-3
+    %h2= t('activerecord.attributes.user.profile')
+    %p= @user.profile
+
+  %h2= t('activerecord.attributes.user.external_blog_url')
+  = link_to @user.external_blog_url, @user.external_blog_url, target: :_blank

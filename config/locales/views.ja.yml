@@ -22,3 +22,6 @@ ja:
       destroy:
         title: "ログアウト"
         confirm: "ログアウトしますか？"
+  users:
+    edit:
+      title: "ユーザプロフィール情報"
