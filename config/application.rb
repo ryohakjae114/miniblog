@@ -43,6 +43,9 @@ module Miniblog
 
     config.generators do |g|
       g.helper false
+      g.test_framework :rspec,
+        request_specs: false,
+        view_specs: false
     end
   end
 end
