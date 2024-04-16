@@ -14,7 +14,6 @@ RSpec.describe 'Posts', type: :system do
 
   context 'ログイン時' do
     let!(:user) { create(:user) }
-    let!(:post) { create(:post) }
 
     before do
       sign_in user
@@ -31,8 +30,11 @@ RSpec.describe 'Posts', type: :system do
     end
 
     it '一覧できること' do
+      create(:post, body: 'あいうえお')
+      create(:post, body: 'かきくけこ')
       visit root_path
-      expect(page).to have_content('今日はいい天気だわな')
+      expect(page).to have_content('あいうえお')
+      expect(page.all('.post').count).to eq 2
     end
   end
 end
