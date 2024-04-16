@@ -40,5 +40,9 @@ module Miniblog
     config.generators.system_tests = nil
 
     config.i18n.default_locale = :ja
+
+    config.generators do |g|
+      g.helper false
+    end
   end
 end
