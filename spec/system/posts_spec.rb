@@ -27,6 +27,7 @@ RSpec.describe 'Posts', type: :system do
         click_button '登録する'
       end.to change(Post, :count).by(1)
       expect(page).to have_content('投稿しました')
+      expect(page).to have_content('今日はいい天気だわな')
     end
 
     it '一覧できること' do
