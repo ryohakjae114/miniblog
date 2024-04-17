@@ -25,3 +25,8 @@ ja:
   users:
     edit:
       title: "ユーザプロフィール情報"
+  posts:
+    index:
+      title: "投稿一覧"
+    new:
+      title: "新規投稿作成"
