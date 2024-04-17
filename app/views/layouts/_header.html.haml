@@ -1,9 +1,15 @@
 %header.navbar.bg-body-tertiary.mb-4.d-flex.px-5
   = link_to 'miniblog', root_path, class: 'fs-2 text-decoration-none'
   - if user_signed_in?
-    = button_to 'ログアウト', destroy_user_session_path,
-                { method: :delete,
-                  form: { data: { turbo_confirm: 'ログアウトしますか？' } },
-                  class: 'btn text-decoration-none text-primary' }
+    .dropdown
+      = link_to t('header.user_dropdown'), '#', class: 'nav-link dropdown-toggle', 'data-bs-toggle' => 'dropdown', 'aria-expanded' => 'false'
+      %ul.dropdown-menu.dropdown-menu-end
+        %li= link_to t('devise.registrations.edit.title'), edit_user_registration_path, class: 'dropdown-item'
+        %hr.dropdown-divider
+        %li
+          = button_to t('devise.sessions.destroy.title'), destroy_user_session_path,
+                      { method: :delete,
+                        form: { data: { turbo_confirm: t('devise.sessions.destroy.confirm') } },
+                        class: 'dropdown-item' }
   - else
-    = link_to 'ログイン', new_user_session_path, class: 'text-decoration-none'
+    = link_to t('devise.sessions.new.title'), new_user_session_path, class: 'text-decoration-none'
