@@ -7,6 +7,6 @@
     .card-body
       %p.fs-5= post.body
       .text-end.mb-0
-        post_by:
+        posted_by:
         = link_to post.user.name, user_path(post.user)
         %p.mt-2= l post.created_at
