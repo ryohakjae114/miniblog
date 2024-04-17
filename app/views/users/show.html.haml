@@ -11,3 +11,6 @@
 
   %h2= t('activerecord.attributes.user.external_blog_url')
   = link_to @user.external_blog_url, @user.external_blog_url, target: :_blank
+
+- if current_user == @user
+  = link_to t('devise.registrations.edit.title'), edit_user_registration_path, class: 'btn btn-primary mt-5'
