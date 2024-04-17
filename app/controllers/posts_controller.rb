@@ -4,14 +4,14 @@ class PostsController < ApplicationController
   end
 
   def new
-    @post = Post.new
+    @post = current_user.posts.build
   end
 
   def create
-    @post = Post.new(post_params)
+    @post = current_user.posts.build(post_params)
 
     if @post.save
-      redirect_to new_post_path, notice: '投稿しました'
+      redirect_to root_path, notice: '投稿しました'
     else
       render :new, status: :unprocessable_entity
     end
