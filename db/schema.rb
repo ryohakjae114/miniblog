@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_03_28_051838) do
+ActiveRecord::Schema[7.1].define(version: 2024_04_18_053005) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -29,7 +29,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_28_051838) do
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
     t.string "profile", limit: 200
-    t.text "external_blog_url"
+    t.text "external_blog_url", default: ""
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["name"], name: "index_users_on_name", unique: true
