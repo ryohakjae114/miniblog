@@ -2,7 +2,7 @@
 
 = link_to t('posts.new.title'), new_post_path, class: 'btn btn-primary my-4'
 
-- @posts.each do |post|
+- @posts.includes(:user).find_each do |post|
   .card.post
     .card-body
       %p.fs-5= post.body
