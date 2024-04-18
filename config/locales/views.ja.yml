@@ -9,7 +9,7 @@ ja:
       new:
         title: "アカウント作成"
       edit:
-        title: "アカウント情報変更"
+        title: "認証情報変更"
         hint:
           password: "新しいパスワード"
           password_confirmation: "新しいパスワード(確認用)"

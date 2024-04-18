@@ -8,8 +8,6 @@
 
 = simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, class: 'mt-5' }) do |f|
   = f.input :name
-  = f.input :profile
-  = f.input :external_blog_url
   = f.input :password, label: t('devise.registrations.edit.hint.password')
   = f.input :password_confirmation, label: t('devise.registrations.edit.hint.password_confirmation')
   = f.input :current_password
