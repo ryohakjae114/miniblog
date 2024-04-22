@@ -3,6 +3,10 @@ Rails.application.routes.draw do
 
   devise_for :users
   root 'posts#index'
-  resources :users, only: :show
+  resources :users, only: %i[show update] do
+    member do
+      get 'edit_public'
+    end
+  end
   resources :posts, only: %i[new create]
 end
