@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   root 'posts#index'
   resources :users, only: %i[show update] do
     member do
-      get 'edit_public'
+      get 'profile'
     end
   end
   resources :posts, only: %i[new create]

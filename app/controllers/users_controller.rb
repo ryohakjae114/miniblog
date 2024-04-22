@@ -1,10 +1,10 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: %i[show edit_public update]
+  before_action :set_user, only: %i[show profile update]
 
   def show
   end
 
-  def edit_public
+  def profile
   end
 
   def update

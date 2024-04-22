@@ -23,7 +23,7 @@ ja:
         title: "ログアウト"
         confirm: "ログアウトしますか？"
   users:
-    edit:
+    profile:
       title: "ユーザプロフィール情報"
   posts:
     index:
