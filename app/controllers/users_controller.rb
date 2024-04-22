@@ -22,6 +22,6 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:profile, :external_blog_url)
+    params.require(:user).permit(:introduction, :external_blog_url)
   end
 end

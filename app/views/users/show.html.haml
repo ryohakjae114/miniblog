@@ -6,8 +6,8 @@
     %p= @user.name
 
   .mb-3
-    %h2= t('activerecord.attributes.user.profile')
-    %p= @user.profile
+    %h2= t('activerecord.attributes.user.introduction')
+    %p= @user.introduction
 
   %h2= t('activerecord.attributes.user.external_blog_url')
   = link_to @user.external_blog_url, @user.external_blog_url, target: :_blank

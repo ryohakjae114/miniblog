@@ -3,6 +3,6 @@
 = render 'layouts/error_message', resource: @user
 
 = simple_form_for(@user, html: { method: :put, class: 'mt-5' }) do |f|
-  = f.input :profile
+  = f.input :introduction
   = f.input :external_blog_url
   = f.button :submit
