@@ -4,6 +4,8 @@
     .dropdown
       = link_to t('header.user_dropdown'), '#', class: 'nav-link dropdown-toggle', 'data-bs-toggle' => 'dropdown', 'aria-expanded' => 'false'
       %ul.dropdown-menu.dropdown-menu-end
+        %li= link_to t('users.profile.title'), profile_user_path(current_user), class: 'dropdown-item'
+        %hr.dropdown-divider
         %li= link_to t('devise.registrations.edit.title'), edit_user_registration_path, class: 'dropdown-item'
         %hr.dropdown-divider
         %li
