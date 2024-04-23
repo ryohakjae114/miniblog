@@ -3,6 +3,8 @@
 = render 'layouts/error_message', resource: @user
 
 = simple_form_for(@user, html: { method: :put, class: 'mt-5' }) do |f|
-  = f.input :introduction
-  = f.input :external_blog_url
-  = f.button :submit
+  = f.input :introduction, disabled: @user == current_user ? '' : true
+  = f.input :external_blog_url, disabled: @user == current_user ? '' : true
+
+  - if @user == current_user
+    = f.button :submit
