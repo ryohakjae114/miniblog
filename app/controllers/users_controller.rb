@@ -12,7 +12,7 @@ class UsersController < ApplicationController
     if @user.update(user_params)
       redirect_to profile_user_path(@user), notice: t('users.edit_public.update_success')
     else
-      render :edit_public, status: :unprocessable_entity
+      render :profile, status: :unprocessable_entity
     end
   end
 

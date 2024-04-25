@@ -1,6 +1,5 @@
 %h2= t('devise.registrations.new.title')
 
-= render 'layouts/error_message', resource:
 = simple_form_for(resource, url: user_registration_path) do |f|
   = f.input :name
   = f.input :password
