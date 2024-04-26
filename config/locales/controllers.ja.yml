@@ -1,4 +1,3 @@
 ja:
-  users:
-    edit_public:
-      update_success: "公開情報を変更しました"
+  profiles:
+    update_success: "プロフィール情報を変更しました"
