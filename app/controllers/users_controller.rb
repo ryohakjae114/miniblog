@@ -1,16 +1,13 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: %i[show profile update]
+  before_action :set_user, only: %i[show update]
   before_action :authenticate_current_user!, only: :update
 
   def show
   end
 
-  def profile
-  end
-
   def update
     if @user.update(user_params)
-      redirect_to profile_user_path(@user), notice: t('users.edit_public.update_success')
+      redirect_to user_path(@user), notice: t('users.edit_public.update_success')
     else
       render :profile, status: :unprocessable_entity
     end

@@ -25,6 +25,9 @@ ja:
   users:
     profile:
       title: "ユーザプロフィール情報"
+  profile:
+    edit:
+      title: "ユーザプロフィール情報変更"
   posts:
     index:
       title: "投稿一覧"
