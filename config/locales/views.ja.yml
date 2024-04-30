@@ -2,8 +2,8 @@ ja:
   time:
     formats:
       default: "%Y/%m/%d %H:%M:%S"
-  header:
-    user_dropdown: "ユーザ情報"
+  menus:
+    profile: "ユーザ情報"
   devise:
     registrations:
       new:
@@ -25,9 +25,9 @@ ja:
   users:
     show:
       title: "ユーザプロフィール情報"
-  profile:
-    edit:
-      title: "ユーザプロフィール情報変更"
+    profiles:
+      edit:
+        title: "プロフィール情報変更"
   posts:
     index:
       title: "投稿一覧"
