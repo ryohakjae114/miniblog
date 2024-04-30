@@ -8,7 +8,7 @@ ja:
         name: "名前"
         password: "パスワード"
         password_confirmation: "パスワード(確認用)"
-        introduction: "プロフィール情報"
+        introduction: "紹介文"
         external_blog_url: "ブログURL"
       post:
         body: "投稿文"

@@ -10,7 +10,7 @@ RSpec.describe 'Profiles', type: :system do
   it 'ユーザプロフィール情報を変更できること' do
     sign_in user
     visit edit_profile_path
-    fill_in 'プロフィール情報', with: 'りょはっちぇです'
+    fill_in '紹介文', with: 'りょはっちぇです'
     fill_in 'ブログURL', with: 'https://hakjae@example.com'
     click_button '更新する'
     expect(page).to have_content('プロフィール情報を変更しました')
