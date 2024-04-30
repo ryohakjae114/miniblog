@@ -12,5 +12,3 @@
   .fs-3= t('activerecord.attributes.user.external_blog_url')
   = auto_link @user.external_blog_url, html: { target: :_blank }
 
-- if current_user == @user
-  = link_to t('users.profiles.edit.title'), edit_profile_path, class: 'btn btn-primary mt-5'

@@ -9,7 +9,7 @@ RSpec.describe 'Profiles', type: :system do
     fill_in '紹介文', with: 'りょはっちぇです'
     fill_in 'ブログURL', with: 'https://hakjae@example.com'
     click_button '更新する'
-    expect(page).to have_content('プロフィール情報を変更しました')
+    expect(page).to have_content('更新しました')
     expect(page).to have_content('りょはっちぇです')
     expect(page).to have_content('https://hakjae@example.com')
   end
