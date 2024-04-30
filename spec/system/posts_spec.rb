@@ -1,10 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe 'Posts', type: :system do
-  before do
-    driven_by(:rack_test)
-  end
-
   context '未ログイン時' do
     it '投稿作成にアクセスするとサインインページにリダイレクトすること' do
       visit new_post_path

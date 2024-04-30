@@ -1,10 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe 'Profiles', type: :system do
-  before do
-    driven_by(:rack_test)
-  end
-
   let!(:user) { create(:user, introduction: '', external_blog_url: '') }
 
   it 'ユーザプロフィール情報を変更できること' do

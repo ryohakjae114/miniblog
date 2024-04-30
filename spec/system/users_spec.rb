@@ -1,10 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe 'Users', type: :system do
-  before do
-    driven_by(:rack_test)
-  end
-
   let!(:user) { create(:user, introduction: 'ryohakjaeです', external_blog_url: 'https://hakjae@example.com') }
 
   it 'ユーザプロフィール情報を閲覧できること' do
