@@ -1,4 +1,5 @@
 %h2= t('.title')
+
 = simple_form_for(resource, url: session_path(resource_name)) do |f|
   = f.input :name
   = f.input :password
