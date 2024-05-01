@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   resources :users, only: :show
   resource :profile, only: %i[edit update]
   resources :posts, only: %i[new create]
+  resources :relationships, only: %i[create destroy]
 end
