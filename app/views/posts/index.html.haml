@@ -6,7 +6,12 @@
   .card.post
     .card-body
       %p.fs-5= post.body
-      .text-end.mb-0
+      .text-end
         posted_by:
         = link_to post.user.name, user_path(post.user)
-        %p.mt-2= l post.created_at
+        - unless current_user == post.user
+          - if current_user.follow?(post.user)
+            = button_to t('.following'), relationship_path(current_user.active_relationships.find_by(followed: post.user)), method: :delete, class: 'btn btn-outline-dark', form_class: 'd-inline-block ms-4'
+          - else
+            = link_to t('.follow'), relationships_path(followed_id: post.user), data: { turbo_method: :post }, class: 'btn btn-dark ms-4'
+        %p.mt-2.mb-0= l post.created_at

@@ -28,6 +28,10 @@ class User < ApplicationRecord
     false
   end
 
+  def follow?(followed_user)
+    following.include?(followed_user)
+  end
+
   def follow(followed_user)
     following << followed_user
   end
