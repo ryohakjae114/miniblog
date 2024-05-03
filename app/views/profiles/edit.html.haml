@@ -1,0 +1,7 @@
+%h1.fs-2= t('.title')
+
+.mt-5
+  = simple_form_for(@user, url: profile_path) do |f|
+    = f.input :introduction
+    = f.input :external_blog_url
+    = f.button :submit

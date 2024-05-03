@@ -40,5 +40,14 @@ module Miniblog
     config.generators.system_tests = nil
 
     config.i18n.default_locale = :ja
+
+    config.generators do |g|
+      g.helper false
+      g.test_framework :rspec,
+        request_specs: false,
+        view_specs: false,
+        helper_specs: false,
+        routing_specs: false
+    end
   end
 end

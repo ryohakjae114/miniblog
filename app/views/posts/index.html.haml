@@ -1,5 +1,12 @@
-- @posts.each do |post|
+%h1.fs-2= t('.title')
+
+= link_to t('posts.new.title'), new_post_path, class: 'btn btn-primary my-4'
+
+- @posts.includes(:user).find_each do |post|
   .card.post
     .card-body
       %p.fs-5= post.body
-      %p.text-end.mb-0= l post.created_at
+      .text-end.mb-0
+        posted_by:
+        = link_to post.user.name, user_path(post.user)
+        %p.mt-2= l post.created_at

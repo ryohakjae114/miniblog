@@ -1,0 +1,14 @@
+%h1.fs-2= t('.title')
+
+.bg-light-subtle.border.mt-5.p-4.rounded-3.text-break
+  .mb-3
+    .fs-3= t('activerecord.attributes.user.name')
+    %p= @user.name
+
+  .mb-3
+    .fs-3= t('activerecord.attributes.user.introduction')
+    %p= @user.introduction
+
+  .fs-3= t('activerecord.attributes.user.external_blog_url')
+  = auto_link @user.external_blog_url, html: { target: :_blank }
+

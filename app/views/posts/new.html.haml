@@ -1,4 +1,5 @@
-= render 'layouts/error_message', resource: @post
+%h1.fs-2= t('.title')
+
 = simple_form_for @post do |f|
   = f.input :body
   = f.button :submit

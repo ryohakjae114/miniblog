@@ -1,14 +1,14 @@
 ja:
   activerecord:
     models:
-      user: "ユーザー"
+      user: "ユーザ"
       post: "短文"
     attributes:
       user:
         name: "名前"
         password: "パスワード"
         password_confirmation: "パスワード(確認用)"
-        profile: "プロフィール情報"
+        introduction: "紹介文"
         external_blog_url: "ブログURL"
       post:
         body: "投稿文"

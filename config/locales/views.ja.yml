@@ -2,14 +2,14 @@ ja:
   time:
     formats:
       default: "%Y/%m/%d %H:%M:%S"
-  header:
-    user_dropdown: "ユーザ情報"
+  menus:
+    profile: "ユーザ情報"
   devise:
     registrations:
       new:
         title: "アカウント作成"
       edit:
-        title: "アカウント情報変更"
+        title: "認証情報変更"
         hint:
           password: "新しいパスワード"
           password_confirmation: "新しいパスワード(確認用)"
@@ -22,3 +22,14 @@ ja:
       destroy:
         title: "ログアウト"
         confirm: "ログアウトしますか？"
+  users:
+    show:
+      title: "ユーザプロフィール情報"
+    profiles:
+      edit:
+        title: "プロフィール情報変更"
+  posts:
+    index:
+      title: "投稿一覧"
+    new:
+      title: "新規投稿作成"
