@@ -37,5 +37,7 @@ ja:
     posts:
       index:
         title: "フォローしているユーザの投稿一覧"
+  shared:
+    posts:
       following: "フォロー中"
       follow: "フォローする"
