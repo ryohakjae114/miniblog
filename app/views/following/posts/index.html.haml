@@ -1,7 +1,7 @@
 %h1.fs-2= t('.title')
 
 .d-flex.my-4
-  = link_to t('following.posts.index.title'), following_posts_path, class: 'btn btn-secondary'
+  = link_to t('posts.index.title'), root_path, class: 'btn btn-secondary'
   = link_to t('posts.new.title'), new_post_path, class: 'btn btn-primary ms-auto'
 
 = render 'shared/posts', posts: @posts
