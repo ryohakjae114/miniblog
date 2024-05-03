@@ -1,9 +1,10 @@
 %h2= t('.title')
+
 = simple_form_for(resource, url: session_path(resource_name)) do |f|
   = f.input :name
   = f.input :password
   = f.input :remember_me, as: :boolean
-  = f.button :submit
+  = f.button :submit, t('.title')
 
 .mt-4
   = link_to t('devise.registrations.new.title'), new_user_registration_path

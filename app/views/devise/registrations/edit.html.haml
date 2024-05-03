@@ -5,9 +5,10 @@
               form: { data: { turbo_confirm: t('.user_registration_path.confirm') } },
               class: 'btn btn-danger float-end' }
 
-= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, class: 'mt-5' }) do |f|
-  = f.input :name
-  = f.input :password, label: t('.hint.password')
-  = f.input :password_confirmation, label: t('.hint.password_confirmation')
-  = f.input :current_password
-  = f.button :submit
+.mt-5
+  = simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
+    = f.input :name
+    = f.input :password, label: t('.hint.password')
+    = f.input :password_confirmation, label: t('.hint.password_confirmation')
+    = f.input :current_password
+    = f.button :submit
