@@ -4,7 +4,9 @@
       %p.fs-5= post.body
       .d-flex.justify-content-between
         - if current_user.like?(post)
-          = link_to 'いいね', post_likes_url(post), data: { turbo_method: :post }
+          = button_to 'いいね解除', like_path(Like.find_by(post:, user: current_user)), { method: :delete }
+        - else
+          = link_to 'いいね', post_likes_path(post), data: { turbo_method: :post }
         .text-end
           posted_by:
           = link_to post.user.name, user_path(post.user)
