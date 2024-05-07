@@ -16,9 +16,12 @@ RSpec.describe 'Following::Posts', type: :system do
     user.follow(taji)
     visit following_posts_path
     expect(page).to have_css('.card', count: 2)
+    expect(page).to have_content('hakjae')
+    expect(page).to have_content('taji')
     user.unfollow(taji)
     visit current_path
     expect(page).to have_css('.card', count: 1)
     expect(page).to have_content('hakjae')
+    expect(page).not_to have_content('taji')
   end
 end
