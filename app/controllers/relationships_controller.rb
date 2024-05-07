@@ -7,7 +7,7 @@ class RelationshipsController < ApplicationController
 
   def destroy
     @user = Relationship.find(params[:id]).followed
-    current_user.unfollow(@user)
+    current_user.unfollow!(@user)
     redirect_back_or_to root_url, status: :see_other
   end
 end

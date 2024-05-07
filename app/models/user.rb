@@ -36,7 +36,7 @@ class User < ApplicationRecord
     following << followed_user
   end
 
-  def unfollow(followed_user)
-    active_relationships.find_by!(followed_id: followed_user.id).destroy!
+  def unfollow!(followed_user)
+    active_relationships.find_by(followed_id: followed_user.id).destroy!
   end
 end
