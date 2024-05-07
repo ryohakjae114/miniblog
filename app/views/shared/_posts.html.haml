@@ -7,7 +7,7 @@
         = link_to post.user.name, user_path(post.user)
         - unless current_user == post.user
           - if current_user.follow?(post.user)
-            = button_to t('.following'), relationship_path(current_user.active_relationships.find_by(followed: post.user)),
+            = button_to t('.unfollow'), relationship_path(current_user.active_relationships.find_by(followed: post.user)),
                         method: :delete,
                         class: 'btn btn-outline-dark',
                         form_class: 'd-inline-block ms-4'

@@ -14,14 +14,14 @@ RSpec.describe 'Relationships', type: :system do
     expect do
       click_link 'フォローする'
     end.to change(user.following, :count).by(1)
-    expect(page).to have_content('フォロー中')
+    expect(page).to have_content('フォロー解除')
   end
 
   it 'フォローを外せること' do
     user.follow(friend)
     visit root_path
     expect do
-      click_button 'フォロー中'
+      click_button 'フォロー解除'
     end.to change(user.following, :count).by(-1)
     expect(page).to have_content('フォローする')
   end
