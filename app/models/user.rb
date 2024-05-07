@@ -40,4 +40,8 @@ class User < ApplicationRecord
   def unfollow!(user)
     active_relationships.find_by(followed_id: user.id).destroy!
   end
+
+  def like?(post)
+    likes.find_by(post_id: post.id).present?
+  end
 end
