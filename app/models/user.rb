@@ -32,11 +32,11 @@ class User < ApplicationRecord
     following.include?(followed_user)
   end
 
-  def follow(followed_user)
-    following << followed_user
+  def follow(following_user)
+    following << following_user
   end
 
-  def unfollow!(followed_user)
-    active_relationships.find_by(followed_id: followed_user.id).destroy!
+  def unfollow!(user)
+    active_relationships.find_by(followed_id: user.id).destroy!
   end
 end
