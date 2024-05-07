@@ -1,2 +1,13 @@
 @import 'bootstrap/scss/bootstrap';
 @import 'bootstrap-icons/font/bootstrap-icons';
+
+.not-like {
+  color: $pink;
+  border-color: $pink;
+}
+
+.like {
+  background-color: $pink;
+  color: $white;
+  height: 100%;
+}
