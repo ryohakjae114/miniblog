@@ -3,7 +3,11 @@ Rails.application.routes.draw do
 
   devise_for :users
   root 'posts#index'
-  resources :users, only: %i[show update]
+  resources :users, only: :show
   resource :profile, only: %i[edit update]
   resources :posts, only: %i[new create]
+  namespace :following do
+    resources :posts, only: :index
+  end
+  resources :relationships, only: %i[create destroy]
 end

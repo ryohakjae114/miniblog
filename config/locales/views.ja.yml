@@ -33,3 +33,11 @@ ja:
       title: "投稿一覧"
     new:
       title: "新規投稿作成"
+  following:
+    posts:
+      index:
+        title: "フォローしているユーザの投稿一覧"
+  shared:
+    posts:
+      follow: "フォローする"
+      unfollow: "フォロー解除"
