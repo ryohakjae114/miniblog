@@ -12,7 +12,7 @@ RSpec.describe 'Relationships', type: :system do
   it 'フォローできること' do
     visit root_path
     expect do
-      click_link 'フォローする'
+      click_on 'フォローする'
     end.to change(user.following, :count).by(1)
     expect(page).to have_content('フォロー解除')
   end
@@ -21,7 +21,7 @@ RSpec.describe 'Relationships', type: :system do
     user.follow(friend)
     visit root_path
     expect do
-      click_button 'フォロー解除'
+      click_on 'フォロー解除'
     end.to change(user.following, :count).by(-1)
     expect(page).to have_content('フォローする')
   end
