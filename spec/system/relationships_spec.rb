@@ -3,10 +3,10 @@ require 'rails_helper'
 RSpec.describe 'Relationships', type: :system do
   let!(:user) { create(:user) }
   let!(:friend) { create(:user) }
-  let!(:post) { create(:post, user: friend) }
 
   before do
     sign_in user
+    create(:post, user: friend)
   end
 
   it 'フォローできること' do

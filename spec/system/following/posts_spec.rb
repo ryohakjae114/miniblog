@@ -2,23 +2,23 @@ require 'rails_helper'
 
 RSpec.describe 'Following::Posts', type: :system do
   let!(:user) { create(:user) }
-  let(:friend) { create(:user, name: 'friend') }
-  let(:enemy) { create(:user, name: 'enemy') }
+  let(:hakjae) { create(:user, name: 'hakjae') }
+  let(:taji) { create(:user, name: 'taji') }
 
   before do
     sign_in user
-    create(:post, user: friend)
-    create(:post, user: enemy)
+    create(:post, user: hakjae)
+    create(:post, user: taji)
   end
 
   it 'フォローしているユーザーのみのpost一覧を閲覧できる' do
-    user.follow(friend)
-    user.follow(enemy)
+    user.follow(hakjae)
+    user.follow(taji)
     visit following_posts_path
     expect(page).to have_css('.card', count: 2)
-    user.unfollow(enemy)
+    user.unfollow(taji)
     visit current_path
     expect(page).to have_css('.card', count: 1)
-    expect(page).to have_content('friend')
+    expect(page).to have_content('hakjae')
   end
 end
