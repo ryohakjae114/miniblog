@@ -40,3 +40,5 @@
 /node_modules
 
 /config/database.yml
+
+/.DS_Store
