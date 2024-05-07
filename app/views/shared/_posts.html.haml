@@ -6,7 +6,7 @@
         - if current_user.like?(post)
           = button_to 'like', like_path(Like.find_by(post:, user: current_user)), { method: :delete, class: 'btn not-like' }
         - else
-          = link_to 'like', post_likes_path(post), data: { turbo_method: :post }, class: 'btn like '
+          = link_to 'like', post_likes_path(post), data: { turbo_method: :post }, class: 'btn like'
         .text-end
           posted_by:
           = link_to post.user.name, user_path(post.user)
