@@ -42,6 +42,6 @@ class User < ApplicationRecord
   end
 
   def like?(post)
-    likes.find_by(post_id: post.id).present?
+    likes.exists?(post_id: post.id)
   end
 end
