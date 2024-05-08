@@ -41,3 +41,4 @@ ja:
     posts:
       follow: "フォローする"
       unfollow: "フォロー解除"
+      likes_count: "%{count}件"

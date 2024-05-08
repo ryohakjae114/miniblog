@@ -3,10 +3,12 @@
     .card-body
       %p.fs-5= post.body
       .d-flex.justify-content-between
-        - if current_user.like?(post)
-          = button_to 'like', like_path(Like.find_by(post:, user: current_user)), { method: :delete, class: 'btn not-like' }
-        - else
-          = link_to 'like', post_likes_path(post), data: { turbo_method: :post }, class: 'btn like'
+        .d-flex.h-100.align-items-center
+          - if current_user.like?(post)
+            = button_to '♡', like_path(Like.find_by(post:, user: current_user)), { method: :delete, class: 'btn like' }
+          - else
+            = link_to '♡', post_likes_path(post), data: { turbo_method: :post }, class: 'btn not-like'
+          = link_to t('.likes_count', count: post.likes_count), '', class: 'ms-2'
         .text-end
           posted_by:
           = link_to post.user.name, user_path(post.user)

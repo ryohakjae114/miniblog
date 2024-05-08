@@ -3,11 +3,13 @@
 
 .not-like {
   color: $pink;
-  border-color: $pink;
+  border-color: $gray-600;
+  &:hover {
+    border-color: $pink;
+  }
 }
 
 .like {
   background-color: $pink;
   color: $white;
-  height: 100%;
 }

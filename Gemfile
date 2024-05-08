@@ -4,6 +4,7 @@ gem 'rails'
 
 gem 'bootsnap', require: false
 gem 'cssbundling-rails'
+gem 'dekiru'
 gem 'devise'
 gem 'devise-i18n'
 gem 'faker'
@@ -17,6 +18,7 @@ gem 'simple_form'
 gem 'sprockets-rails'
 gem 'stimulus-rails'
 gem 'turbo-rails'
+
 group :development, :test do
   gem 'brakeman'
   gem 'brakeman_translate_checkstyle_format'
