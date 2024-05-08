@@ -410,8 +410,8 @@ DEPENDENCIES
   haml_lint
   html2haml
   jsbundling-rails
-  pg (~> 1.1)
-  puma (>= 5.0)
+  pg
+  puma
   rails
   rails-i18n
   rails_autolink
