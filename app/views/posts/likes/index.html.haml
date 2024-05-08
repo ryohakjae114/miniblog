@@ -1,0 +1,6 @@
+%h1.fs-2= t('.title', count: @post.likes_count)
+
+%ul.list-group.col-6.mx-auto
+  - @users.each do |user|
+    %li.list-group-item
+      = link_to user.name, user_path(user)
