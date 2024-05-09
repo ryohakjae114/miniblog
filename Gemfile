@@ -4,19 +4,21 @@ gem 'rails'
 
 gem 'bootsnap', require: false
 gem 'cssbundling-rails'
+gem 'dekiru'
 gem 'devise'
 gem 'devise-i18n'
 gem 'faker'
 gem 'haml-rails'
 gem 'jsbundling-rails'
-gem 'pg', '~> 1.1'
-gem 'puma', '>= 5.0'
+gem 'pg'
+gem 'puma'
 gem 'rails_autolink'
 gem 'rails-i18n'
 gem 'simple_form'
 gem 'sprockets-rails'
 gem 'stimulus-rails'
 gem 'turbo-rails'
+
 group :development, :test do
   gem 'brakeman'
   gem 'brakeman_translate_checkstyle_format'

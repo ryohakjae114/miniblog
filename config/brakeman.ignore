@@ -1,0 +1,29 @@
+{
+  "ignored_warnings": [
+    {
+      "warning_type": "Unscoped Find",
+      "warning_code": 82,
+      "fingerprint": "b4dda27bf97640df569b78e1ed221b56c19352d610aeb0289124fb9cedd03a34",
+      "check_name": "UnscopedFind",
+      "message": "Unscoped call to `Post#find`",
+      "file": "app/controllers/posts/likes_controller.rb",
+      "line": 3,
+      "link": "https://brakemanscanner.org/docs/warning_types/unscoped_find/",
+      "code": "Post.find(params[:post_id])",
+      "render_path": null,
+      "location": {
+        "type": "method",
+        "class": "Posts::LikesController",
+        "method": "index"
+      },
+      "user_input": "params[:post_id]",
+      "confidence": "Weak",
+      "cwe_id": [
+        285
+      ],
+      "note": ""
+    }
+  ],
+  "updated": "2024-05-08 17:18:09 +0900",
+  "brakeman_version": "6.1.2"
+}
