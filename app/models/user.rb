@@ -16,7 +16,7 @@ class User < ApplicationRecord
   has_many :posts, dependent: :destroy
   has_many :likes, dependent: :destroy
 
-  validates :name, presence: true, length: { maximum: 20 },
+  validates :name, presence: true, length: { maximum: 20 }, uniqueness: true,
                    format: { with: /\A[a-zA-Z]+\z/, message: I18n.t('activerecord.validates.user.name.format') }
   validates :introduction, length: { maximum: 200 }
   validates :external_blog_url, length: { maximum: 2083 }
