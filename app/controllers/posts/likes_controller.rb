@@ -6,11 +6,11 @@ class Posts::LikesController < ApplicationController
 
   def create
     current_user.likes.create!(post_id: params[:post_id])
-    redirect_to posts_url
+    redirect_to root_url
   end
 
   def destroy
     current_user.likes.find(params[:id]).destroy!
-    redirect_to posts_url
+    redirect_to root_url
   end
 end
