@@ -11,6 +11,6 @@ class Posts::LikesController < ApplicationController
 
   def destroy
     current_user.likes.find(params[:id]).destroy!
-    redirect_to root_url
+    redirect_to root_url, status: :see_other
   end
 end
