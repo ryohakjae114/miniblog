@@ -45,3 +45,4 @@ ja:
       follow: "フォローする"
       unfollow: "フォロー解除"
       likes_count: "%{count}件"
+      comments_count: "%{count}コメント"
