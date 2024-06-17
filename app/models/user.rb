@@ -45,4 +45,8 @@ class User < ApplicationRecord
   def like?(post)
     likes.exists?(post:)
   end
+
+  def avatar_icon
+    InitialAvatar.avatar_data_uri(self.name[0], size: 30, font_size: 10)
+  end
 end
