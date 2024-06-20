@@ -35,6 +35,7 @@ ja:
       title: "新規投稿作成"
     show:
       title: "投稿詳細"
+      no_comment: "まだコメントはありません"
     likes:
       index:
         title: "いいねしたユーザ一覧(%{count}人)"

@@ -1,9 +1,14 @@
+- make_post_text ||= false
+
 .card.post
   .card-body.p-0
     .d-flex
       .w-100
-        = link_to post_path(post), class: 'd-block h-100' do
-          %p.fs-5.p-3= post.body
+        - if make_post_text
+          %p.h-100.fs-5.p-3= post.body
+        - else
+          = link_to post_path(post), class: 'd-block h-100 text-black text-decoration-none' do
+            %p.h-100.fs-5.p-3= post.body
       .p-3.text-nowrap
         .d-flex.align-items-center
           = link_to user_path(post.user) do
