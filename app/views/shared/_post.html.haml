@@ -13,6 +13,7 @@
         .d-flex.align-items-center
           = link_to user_path(post.user) do
             = image_tag post.user.avatar_icon, class: 'rounded-circle'
+            = post.user.name
           - unless current_user == post.user
             - if current_user.following?(post.user)
               = button_to t('.unfollow'), relationship_path(current_user.active_relationships.find_by(followed: post.user)),
