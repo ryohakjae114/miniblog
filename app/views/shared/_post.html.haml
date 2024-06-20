@@ -1,32 +1,34 @@
-- make_post_text ||= false
+- render_link_text ||= false
 
 .card.post
-  .card-body.p-0
-    .d-flex
-      .w-100
-        - if make_post_text
+  .card-body.p-0.d-flex
+    .w-100
+      - if render_link_text
+        = link_to post_path(post), class: 'd-block h-100 text-black text-decoration-none' do
           %p.h-100.fs-5.p-3= post.body
-        - else
-          = link_to post_path(post), class: 'd-block h-100 text-black text-decoration-none' do
-            %p.h-100.fs-5.p-3= post.body
-      .p-3.text-nowrap
-        .d-flex.align-items-center
-          = link_to user_path(post.user) do
-            = image_tag post.user.avatar_icon, class: 'rounded-circle'
-            = post.user.name
-          - unless current_user == post.user
-            - if current_user.following?(post.user)
-              = button_to t('.unfollow'), relationship_path(current_user.active_relationships.find_by(followed: post.user)),
-                          method: :delete,
-                          class: 'btn btn-outline-dark',
-                          form_class: 'd-inline-block ms-4'
-            - else
-              = link_to t('.follow'), relationships_path(followed_id: post.user), data: { turbo_method: :post }, class: 'btn btn-dark ms-4'
-        %p.m-3.text-end= l post.created_at
-        .d-flex.align-items-center.me-4
-          - if current_user.like?(post)
-            = button_to '♡', like_path(Like.find_by(post:, user: current_user)), { method: :delete, class: 'btn like' }
+      - else
+        .fs-5.p-3= post.body
+
+    .p-3.text-nowrap
+      .d-flex.align-items-center
+        = link_to user_path(post.user) do
+          = image_tag post.user.avatar_icon, class: 'rounded-circle'
+          = post.user.name
+        -# = render 'follow_button', user: post.user にしたい
+        - unless current_user == post.user
+          - if current_user.following?(post.user)
+            = button_to t('.unfollow'), relationship_path(current_user.active_relationships.find_by(followed: post.user)),
+              method: :delete,
+              class: 'btn btn-outline-dark',
+              form_class: 'd-inline-block ms-4'
           - else
-            = link_to '♡', post_likes_path(post), data: { turbo_method: :post }, class: 'btn not-like'
-          = link_to t('.likes_count', count: post.likes_count), post_likes_path(post), class: 'ms-2'
-          .ms-2= t('.comments_count', count: post.comments_count)
+            = link_to t('.follow'), relationships_path(followed_id: post.user), data: { turbo_method: :post }, class: 'btn btn-dark ms-4'
+      %p.m-3.text-end= l post.created_at
+      .d-flex.align-items-center.me-4
+        -# = render 'like_button', post: post にしたい
+        - if current_user.like?(post)
+          = button_to '♡', like_path(Like.find_by(post:, user: current_user)), { method: :delete, class: 'btn like' }
+        - else
+          = link_to '♡', post_likes_path(post), data: { turbo_method: :post }, class: 'btn not-like'
+        = link_to t('.likes_count', count: post.likes_count), post_likes_path(post), class: 'ms-2'
+        .ms-2= t('.comments_count', count: post.comments_count)
