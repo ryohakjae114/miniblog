@@ -2,7 +2,7 @@
   .card-body.p-0
     .d-flex
       .w-100
-        = link_to '', class: 'd-block h-100' do
+        = link_to post_path(post), class: 'd-block h-100' do
           %p.fs-5.p-3= post.body
       .p-3.text-nowrap
         .d-flex.align-items-center
@@ -24,4 +24,3 @@
             = link_to '♡', post_likes_path(post), data: { turbo_method: :post }, class: 'btn not-like'
           = link_to t('.likes_count', count: post.likes_count), post_likes_path(post), class: 'ms-2'
           .ms-2= t('.comments_count', count: post.comments_count)
-
