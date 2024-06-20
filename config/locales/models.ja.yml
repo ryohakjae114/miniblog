@@ -12,6 +12,8 @@ ja:
         external_blog_url: "ブログURL"
       post:
         body: "投稿文"
+      comment:
+        body: "コメント文"
     validates:
       user:
         name:

@@ -1,0 +1,5 @@
+%h1.fs-2= t('.title')
+
+= simple_form_for @comment, url: post_comments_path(@post) do |f|
+  = f.input :body
+  = f.button :submit
