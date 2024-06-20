@@ -5,11 +5,11 @@ Rails.application.routes.draw do
   root 'posts#index'
   resources :users, only: :show
   resource :profile, only: %i[edit update]
-  resources :posts, only: %i[new create], shallow: true do
+  resources :posts, only: %i[new create show], shallow: true do
     resources :likes, only: %i[index create destroy], module: 'posts'
   end
   namespace :following do
-    resources :posts, only: :index
+    resources :posts, only: %i[index]
   end
   resources :relationships, only: %i[create destroy]
 end

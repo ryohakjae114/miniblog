@@ -33,6 +33,8 @@ ja:
       title: "投稿一覧"
     new:
       title: "新規投稿作成"
+    show:
+      title: "投稿詳細"
     likes:
       index:
         title: "いいねしたユーザ一覧(%{count}人)"
@@ -41,7 +43,7 @@ ja:
       index:
         title: "フォローしているユーザの投稿一覧"
   shared:
-    posts:
+    post:
       follow: "フォローする"
       unfollow: "フォロー解除"
       likes_count: "%{count}件"
