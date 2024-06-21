@@ -36,6 +36,7 @@ ja:
     show:
       title: "投稿詳細"
       no_comment: "まだコメントはありません"
+      to_list: "一覧へ戻る"
     likes:
       index:
         title: "いいねしたユーザ一覧(%{count}人)"
@@ -48,7 +49,9 @@ ja:
         title: "フォローしているユーザの投稿一覧"
   shared:
     post:
+      comments_count: "%{count}コメント"
+    like_button:
+      likes_count: "%{count}件"
+    follow_button:
       follow: "フォローする"
       unfollow: "フォロー解除"
-      likes_count: "%{count}件"
-      comments_count: "%{count}コメント"

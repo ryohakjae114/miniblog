@@ -1,0 +1,12 @@
+.card.comment
+  .card-body.p-0
+    .d-flex
+      .w-100
+        %p.fs-5.p-3= comment.body
+      .p-3.text-nowrap
+        .d-flex.align-items-center
+          = link_to user_path(comment.user) do
+            = image_tag comment.user.avatar_icon, class: 'rounded-circle'
+            = comment.user.name
+          = render 'shared/follow_button', user: comment.user
+        %p.m-3.text-end= l comment.created_at

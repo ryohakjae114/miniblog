@@ -1,27 +1,11 @@
 %h1.fs-2= t('.title')
 .my-4
+  = link_to t('.to_list'), :back, class: 'btn border btn-secondary mb-3'
   = render 'shared/post', post: @post, make_post_text: true
 - if @post.comments.present?
-  - @post.comments.order(created_at: :asc).includes(:user).each do |comment|
-    .container
-      .card.comment
-        .card-body.p-0
-          .d-flex
-            .w-100
-              %p.fs-5.p-3.comment-body= comment.body
-            .p-3.text-nowrap
-              .d-flex.align-items-center
-                = link_to user_path(comment.user) do
-                  = image_tag comment.user.avatar_icon, class: 'rounded-circle'
-                - unless current_user == comment.user
-                  - if current_user.following?(comment.user)
-                    = button_to t('.unfollow'), relationship_path(current_user.active_relationships.find_by(followed: comment.user)),
-                                method: :delete,
-                                class: 'btn btn-outline-dark',
-                                form_class: 'd-inline-block ms-4'
-                  - else
-                    = link_to t('.follow'), relationships_path(followed_id: comment.user), data: { turbo_method: :post }, class: 'btn btn-dark ms-4'
-              %p.m-3.text-end= l comment.created_at
+  .container
+    - @post.comments.order(created_at: :asc).includes(:user).each do |comment|
+      = render 'shared/comment', comment:
 - else
   .text-center= t('.no_comment')
 
