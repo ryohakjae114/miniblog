@@ -47,6 +47,6 @@ ja:
     post:
       likes_count: "%{count}件"
       comments_count: "%{count}コメント"
-    like_button:
+    follow_button:
       follow: "フォローする"
       unfollow: "フォロー解除"
