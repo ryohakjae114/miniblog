@@ -7,5 +7,6 @@
         .d-flex.align-items-center
           = link_to user_path(comment.user) do
             = image_tag comment.user.avatar_icon, class: 'rounded-circle'
+            = comment.user.name
           = render 'shared/follow_button', user: comment.user
         %p.m-3.text-end= l comment.created_at
