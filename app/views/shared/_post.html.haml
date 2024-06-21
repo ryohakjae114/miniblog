@@ -8,7 +8,6 @@
           %p.h-100.fs-5.p-3= post.body
       - else
         .fs-5.p-3= post.body
-
     .p-3.text-nowrap
       .d-flex.align-items-center
         = link_to user_path(post.user) do
@@ -17,10 +16,5 @@
         = render 'shared/follow_button', user: post.user
       %p.m-3.text-end= l post.created_at
       .d-flex.align-items-center.me-4
-        -# = render 'like_button', post: post にしたい
-        - if current_user.like?(post)
-          = button_to '♡', like_path(Like.find_by(post:, user: current_user)), { method: :delete, class: 'btn like' }
-        - else
-          = link_to '♡', post_likes_path(post), data: { turbo_method: :post }, class: 'btn not-like'
-        = link_to t('.likes_count', count: post.likes_count), post_likes_path(post), class: 'ms-2'
+        = render 'shared/like_button', post:
         .ms-2= t('.comments_count', count: post.comments_count)
