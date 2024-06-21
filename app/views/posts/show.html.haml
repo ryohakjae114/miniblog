@@ -2,18 +2,8 @@
 .my-4
   = render 'shared/post', post: @post, make_post_text: true
 - if @post.comments.present?
-  - @post.comments.order(created_at: :asc).includes(:user).each do |comment|
-    .container
-      .card.comment
-        .card-body.p-0
-          .d-flex
-            .w-100
-              %p.fs-5.p-3= comment.body
-            .p-3.text-nowrap
-              .d-flex.align-items-center
-                = link_to user_path(comment.user) do
-                  = image_tag comment.user.avatar_icon, class: 'rounded-circle'
-                = render 'shared/follow_button', user: comment.user
-              %p.m-3.text-end= l comment.created_at
+  .container
+    - @post.comments.order(created_at: :asc).includes(:user).each do |comment|
+      = render 'shared/comment', comment:
 - else
   .text-center= t('.no_comment')
