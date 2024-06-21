@@ -36,6 +36,7 @@ ja:
     show:
       title: "投稿詳細"
       no_comment: "まだコメントはありません"
+      to_list: "一覧へ戻る"
     likes:
       index:
         title: "いいねしたユーザ一覧(%{count}人)"
