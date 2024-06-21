@@ -55,3 +55,8 @@ ja:
     follow_button:
       follow: "フォローする"
       unfollow: "フォロー解除"
+  comments:
+    show:
+      title: "コメント詳細"
+      to_comment: "コメントに戻る"
+      to_post: "投稿に戻る"

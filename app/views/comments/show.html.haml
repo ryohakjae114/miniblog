@@ -1,0 +1,12 @@
+%h1.fs-2= t('.title')
+.my-4
+  = link_to @comment.parent_comment_id.present? ? t('.to_comment') : t('.to_post'), :back, class: 'btn border btn-secondary mb-3'
+  = render 'shared/comment', comment: @comment
+- if @comment.child_comments.present?
+  .container
+    - @comment.child_comments.order(created_at: :asc).includes(:user).each do |comment|
+      = render 'shared/comment', comment:
+- else
+  .text-center= t('.no_comment')
+
+-# = link_to t('posts.comments.new.title'), new_post_comment_path(@comment), class: 'btn btn-primary float-end mt-3'
