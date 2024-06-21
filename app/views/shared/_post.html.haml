@@ -14,15 +14,7 @@
         = link_to user_path(post.user) do
           = image_tag post.user.avatar_icon, class: 'rounded-circle'
           = post.user.name
-        -# = render 'follow_button', user: post.user にしたい
-        - unless current_user == post.user
-          - if current_user.following?(post.user)
-            = button_to t('.unfollow'), relationship_path(current_user.active_relationships.find_by(followed: post.user)),
-              method: :delete,
-              class: 'btn btn-outline-dark',
-              form_class: 'd-inline-block ms-4'
-          - else
-            = link_to t('.follow'), relationships_path(followed_id: post.user), data: { turbo_method: :post }, class: 'btn btn-dark ms-4'
+        = render 'shared/like_button', user: post.user
       %p.m-3.text-end= l post.created_at
       .d-flex.align-items-center.me-4
         -# = render 'like_button', post: post にしたい

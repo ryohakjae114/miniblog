@@ -13,14 +13,7 @@
               .d-flex.align-items-center
                 = link_to user_path(comment.user) do
                   = image_tag comment.user.avatar_icon, class: 'rounded-circle'
-                - unless current_user == comment.user
-                  - if current_user.following?(comment.user)
-                    = button_to t('.unfollow'), relationship_path(current_user.active_relationships.find_by(followed: comment.user)),
-                                method: :delete,
-                                class: 'btn btn-outline-dark',
-                                form_class: 'd-inline-block ms-4'
-                  - else
-                    = link_to t('.follow'), relationships_path(followed_id: comment.user), data: { turbo_method: :post }, class: 'btn btn-dark ms-4'
+                = render 'shared/like_button', user: comment.user
               %p.m-3.text-end= l comment.created_at
 - else
   .text-center= t('.no_comment')

@@ -45,7 +45,8 @@ ja:
         title: "フォローしているユーザの投稿一覧"
   shared:
     post:
-      follow: "フォローする"
-      unfollow: "フォロー解除"
       likes_count: "%{count}件"
       comments_count: "%{count}コメント"
+    like_button:
+      follow: "フォローする"
+      unfollow: "フォロー解除"
