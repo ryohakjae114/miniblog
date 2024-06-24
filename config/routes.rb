@@ -9,7 +9,6 @@ Rails.application.routes.draw do
     resources :likes, only: %i[index create destroy], module: 'posts'
     resources :comments, only: %i[new create], module: 'posts'
   end
-  resources :comments, only: [:show]
   namespace :following do
     resources :posts, only: %i[index]
   end
