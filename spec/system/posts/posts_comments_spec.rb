@@ -12,7 +12,7 @@ RSpec.describe 'Posts::Comments', type: :system do
     visit post_path(post)
     click_on 'コメント作成'
     expect(page).to have_content('コメント作成')
-    fill_in 'コメント文',	with: 'Wryyyyyyy'
+    fill_in 'コメント',	with: 'Wryyyyyyy'
     click_on '登録する'
     expect(page).to have_content('新規登録しました')
     expect(page).to have_selector('.comment-body', match: :first), text: 'Wryyyyyyy'

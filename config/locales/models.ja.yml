@@ -13,7 +13,7 @@ ja:
       post:
         body: "投稿文"
       comment:
-        body: "コメント文"
+        body: "コメント"
     validates:
       user:
         name:
