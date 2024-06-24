@@ -20,6 +20,7 @@ class PostsController < ApplicationController
   end
 
   def show
+    @post
   end
 
   private

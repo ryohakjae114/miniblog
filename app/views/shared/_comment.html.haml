@@ -1,4 +1,4 @@
-.card.comment
+.card.comment.mb-3
   .card-body.p-0
     .d-flex
       .w-100
@@ -10,3 +10,7 @@
             = comment.user.name
           = render 'shared/follow_button', user: comment.user
         %p.m-3.text-end= l comment.created_at
+        = link_to t('posts.comments.new.title'), new_post_comment_path(comment.post, parent_comment_id: comment.id), class: 'btn btn-primary float-end mt-3'
+  - comment.child_comments.each do |child_comment|
+    .container
+      = render 'shared/comment', comment: child_comment

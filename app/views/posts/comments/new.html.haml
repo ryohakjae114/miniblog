@@ -2,4 +2,5 @@
 
 = simple_form_for @comment, url: post_comments_path(@post) do |f|
   = f.input :body
+  = f.input :parent_comment_id, as: :hidden, input_html: { value: params[:parent_comment_id] }
   = f.button :submit
