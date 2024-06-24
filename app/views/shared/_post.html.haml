@@ -16,5 +16,5 @@
         = render 'shared/follow_button', current_user:, user: post.user
       %p.m-3.text-end= l post.created_at
       .d-flex.align-items-center.me-4
-        = render 'shared/like_button', post:
+        = render 'shared/like_button', current_user:, post:
         .ms-2= t('.comments_count', count: post.comments_count)
