@@ -8,7 +8,8 @@ class Comment < ApplicationRecord
   validate :layer_over_three
 
   def layer_over_three
-    if !parent_comment_id? || !self.parent_comment.parent_comment_id?
+    # なぜか下の条件文、読みにくい
+    if self.parent_comment&.parent_comment&.parent_comment_id?
       errors.add(:base, 'parent comment already have layer over three')
     end
   end
