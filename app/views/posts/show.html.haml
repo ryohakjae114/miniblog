@@ -6,7 +6,7 @@
   = link_to t('posts.comments.new.title'), new_post_comment_path(@post), class: 'btn btn-primary float-emd'
 - if @post.comments.present?
   .container
-    - @post.comments.where(parent_comment_id: nil).includes([:child_comments]).order(created_at: :asc).includes(:user).each do |comment|
+    - @post.comments.where(parent_comment_id: nil).order(created_at: :asc).includes(:user).each do |comment|
       = render 'shared/comment', comment:
 - else
   .text-center= t('.no_comment')
