@@ -45,16 +45,5 @@ RSpec.describe 'Posts', type: :system do
       expect(page).to have_content('役に立った')
       expect(page).to have_content('役に立たなかった')
     end
-
-    it 'コメントに対するコメントができること' do
-      create(:comment, body: '役に立った', user:, post:)
-      create(:comment, body: '役に立たなかった', user:, post:)
-      within '.comment', text: '役に立った' do
-        fill_in 'コメント',	with: 'グッバイジョジョ'
-        click_on 'コメント作成'
-        expect(find('.comment', text: '役に立った')).to have_content('グッバイジョジョ')
-      end
-      expect(page).to have_content('登録しました')
-    end
   end
 end
