@@ -13,7 +13,7 @@
         = link_to user_path(post.user) do
           = image_tag post.user.avatar_icon, class: 'rounded-circle'
           = post.user.name
-        = render 'shared/follow_button', current_user:, user: post.user
+        = render 'shared/follow_button', user: current_user, comment_user: post.user
       %p.m-3.text-end= l post.created_at
       .d-flex.align-items-center.me-4
         = render 'shared/like_button', current_user:, post:
