@@ -11,7 +11,7 @@ RSpec.describe 'Posts::Comments', type: :system do
   it '投稿にコメントができること' do
     visit post_path(post)
     click_on 'コメント作成'
-    expect(page).to have_content('コメント作成')
+    expect(page).to have_current_path new_post_comment_path(post)
     fill_in 'コメント',	with: 'Wryyyyyyy'
     click_on '登録する'
     expect(page).to have_content('新規登録しました')
