@@ -1,0 +1,8 @@
+- unless user == comment_user
+  - if user.following?(comment_user)
+    = button_to t('.unfollow'), relationship_path(user.active_relationships.find_by(followed: comment_user)),
+                method: :delete,
+                class: 'btn btn-outline-dark',
+                form_class: 'd-inline-block ms-4'
+  - else
+    = link_to t('.follow'), relationships_path(followed_id: comment_user), data: { turbo_method: :post }, class: 'btn btn-dark ms-4'

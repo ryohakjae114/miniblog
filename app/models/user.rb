@@ -15,6 +15,7 @@ class User < ApplicationRecord
 
   has_many :posts, dependent: :destroy
   has_many :likes, dependent: :destroy
+  has_many :comments, dependent: :destroy
 
   validates :name, presence: true, length: { maximum: 20 }, uniqueness: true,
                    format: { with: /\A[a-zA-Z]+\z/, message: I18n.t('activerecord.validates.user.name.format') }
@@ -43,5 +44,9 @@ class User < ApplicationRecord
 
   def like?(post)
     likes.exists?(post:)
+  end
+
+  def avatar_icon
+    InitialAvatar.avatar_data_uri(self.name[0], size: 30, font_size: 10)
   end
 end

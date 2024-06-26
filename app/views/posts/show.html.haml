@@ -1,0 +1,10 @@
+%h1.fs-2= t('.title')
+.my-4
+  = link_to t('.to_list'), :back, class: 'btn border btn-secondary mb-3'
+  = render 'shared/post', post: @post, make_post_text: true
+- if @post.comments.present?
+  .container
+    - @post.comments.order(created_at: :asc).includes(:user).each do |comment|
+      = render 'shared/comment', comment:
+- else
+  .text-center= t('.no_comment')

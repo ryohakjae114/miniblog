@@ -1,0 +1,5 @@
+- if user.like?(post)
+  = button_to '♡', like_path(Like.find_by(post:, user:)), { method: :delete, class: 'btn like' }
+- else
+  = link_to '♡', post_likes_path(post), data: { turbo_method: :post }, class: 'btn not-like'
+= link_to t('.likes_count', count: post.likes_count), post_likes_path(post), class: 'ms-2'

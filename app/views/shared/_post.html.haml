@@ -1,0 +1,20 @@
+- render_link_text ||= false
+
+.card.post
+  .card-body.p-0.d-flex
+    .w-100
+      - if render_link_text
+        = link_to post_path(post), class: 'd-block h-100 text-black text-decoration-none p-3' do
+          .fs-5= post.body
+      - else
+        .fs-5.p-3= post.body
+    .p-3.text-nowrap
+      .d-flex.align-items-center
+        = link_to user_path(post.user) do
+          = image_tag post.user.avatar_icon, class: 'rounded-circle'
+          = post.user.name
+        = render 'shared/follow_button', user: current_user, comment_user: post.user
+      %p.m-3.text-end= l post.created_at
+      .d-flex.align-items-center.me-4
+        = render 'shared/like_button', user: current_user, post:
+        .ms-2= t('.comments_count', count: post.comments_count)
