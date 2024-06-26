@@ -2,11 +2,12 @@
 .my-4
   = link_to t('.to_list'), :back, class: 'btn border btn-secondary mb-3'
   = render 'shared/post', post: @post, make_post_text: true
+.ms-auto
+  = link_to t('posts.comments.new.title'), new_post_comment_path(@post), class: 'btn btn-primary float-emd'
 - if @post.comments.present?
   .container
-    - @post.comments.order(created_at: :asc).includes(:user).each do |comment|
-      = render 'shared/comment', comment:
+    - @post.comments.where(parent_comment_id: nil).order(created_at: :asc).includes(:user).each do |comment|
+      - comment_layer = 1
+      = render 'shared/comment', comment:, comment_layer:
 - else
   .text-center= t('.no_comment')
-
-= link_to t('posts.comments.new.title'), new_post_comment_path(@post), class: 'btn btn-primary float-end mt-3'

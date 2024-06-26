@@ -1,4 +1,4 @@
-.card.comment
+%div{ class: "card comment mb-3 #{'bg-black bg-opacity-10' if comment_layer > 1}" }
   .card-body.p-0
     .d-flex
       .w-100
@@ -10,3 +10,8 @@
             = comment.user.name
           = render 'shared/follow_button', user: comment.user
         %p.m-3.text-end= l comment.created_at
+        - if comment_layer < 3
+          = link_to t('posts.comments.new.title'), new_post_comment_path(comment.post, parent_comment_id: comment.id), class: 'btn btn-primary float-end mt-3'
+  - comment.child_comments.order(created_at: :asc).includes(:user).each do |child_comment|
+    .container
+      = render 'shared/comment', comment: child_comment, comment_layer: comment_layer + 1
