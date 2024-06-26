@@ -7,6 +7,7 @@
 - if @post.comments.present?
   .container
     - @post.comments.where(parent_comment_id: nil).order(created_at: :asc).includes(:user).each do |comment|
-      = render 'shared/comment', comment:
+      - comment_layer = 1
+      = render 'shared/comment', comment:, comment_layer:
 - else
   .text-center= t('.no_comment')
