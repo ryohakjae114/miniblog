@@ -6,8 +6,7 @@ class Posts::CommentsController < ApplicationController
   end
 
   def create
-    @comment = @post.comments.build(comment_params)
-    @comment.user = current_user
+    @comment = @post.comments.build(comment_params.merge(user_id: current_user.id))
     if @comment.save
       redirect_to post_path(@post), notice: t('controller.created')
     else
