@@ -19,6 +19,7 @@ class User < ApplicationRecord
 
   validates :name, presence: true, length: { maximum: 20 }, uniqueness: true,
                    format: { with: /\A[a-zA-Z]+\z/, message: I18n.t('activerecord.validates.user.name.format') }
+  validates :email, length: { length: { maximum: 254 } }
   validates :introduction, length: { maximum: 200 }
   validates :external_blog_url, length: { maximum: 2083 }
 
