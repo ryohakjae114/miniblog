@@ -86,4 +86,5 @@ Rails.application.configure do
   config.hosts << 'miniblog.test'
 
   config.action_mailer.delivery_method = :letter_opener_web
+  config.action_mailer.default_url_options = { host: 'miniblog.test:3000'}
 end

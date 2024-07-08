@@ -1,0 +1,6 @@
+ja:
+  user_mailer:
+    commented:
+      subject: "コメントが届きました"
+      title: "コメントが届きました。"
+      body: "コメントを見る"
