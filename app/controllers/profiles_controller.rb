@@ -19,6 +19,6 @@ class ProfilesController < ApplicationController
   end
 
   def user_profile_params
-    params.require(:user).permit(:introduction, :external_blog_url)
+    params.require(:user).permit(:introduction, :external_blog_url, :email)
   end
 end

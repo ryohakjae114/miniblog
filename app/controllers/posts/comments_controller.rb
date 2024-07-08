@@ -8,6 +8,7 @@ class Posts::CommentsController < ApplicationController
   def create
     @comment = @post.comments.build(comment_params.merge(user_id: current_user.id))
     if @comment.save
+      UserMailer.with(comment: @comment).commented
       redirect_to post_path(@post), notice: t('controller.created')
     else
       render :new, status: :unprocessable_entity
