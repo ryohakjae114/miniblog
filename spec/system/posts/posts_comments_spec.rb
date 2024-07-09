@@ -23,7 +23,7 @@ RSpec.describe 'Posts::Comments', type: :system do
     mail = ActionMailer::Base.deliveries.last
     expect(mail.to.first).to eq 'taji@example.com'
     expect(mail.subject).to eq 'コメントが届きました'
-    expect(mail.html_part.body).to have_link 'コメントを見る', href: "http://miniblog.test:3000#{post_path(taji_post, anchor: Comment.last)}"
+    expect(mail.html_part.body).to include "/posts/#{taji_post.id}##{Comment.last.id}"
   end
 
   it '自身の投稿にコメントした場合、メールは送信されないこと' do
