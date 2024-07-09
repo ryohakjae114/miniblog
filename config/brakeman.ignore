@@ -3,6 +3,52 @@
     {
       "warning_type": "Unscoped Find",
       "warning_code": 82,
+      "fingerprint": "1d8b998f3d8a5500443b2299b6d524909e8cfee37265ffcef266b1715bbf6eb2",
+      "check_name": "UnscopedFind",
+      "message": "Unscoped call to `Post#find`",
+      "file": "app/controllers/posts_controller.rb",
+      "line": 28,
+      "link": "https://brakemanscanner.org/docs/warning_types/unscoped_find/",
+      "code": "Post.find(params[:id])",
+      "render_path": null,
+      "location": {
+        "type": "method",
+        "class": "PostsController",
+        "method": "set_post"
+      },
+      "user_input": "params[:id]",
+      "confidence": "Weak",
+      "cwe_id": [
+        285
+      ],
+      "note": ""
+    },
+    {
+      "warning_type": "Unscoped Find",
+      "warning_code": 82,
+      "fingerprint": "aadbd0d9107dba47d7c37a00dc592842590d12284b78cb5f33534d4413bb66b2",
+      "check_name": "UnscopedFind",
+      "message": "Unscoped call to `Post#find`",
+      "file": "app/controllers/posts/comments_controller.rb",
+      "line": 21,
+      "link": "https://brakemanscanner.org/docs/warning_types/unscoped_find/",
+      "code": "Post.find(params[:post_id])",
+      "render_path": null,
+      "location": {
+        "type": "method",
+        "class": "Posts::CommentsController",
+        "method": "set_post"
+      },
+      "user_input": "params[:post_id]",
+      "confidence": "Weak",
+      "cwe_id": [
+        285
+      ],
+      "note": ""
+    },
+    {
+      "warning_type": "Unscoped Find",
+      "warning_code": 82,
       "fingerprint": "b4dda27bf97640df569b78e1ed221b56c19352d610aeb0289124fb9cedd03a34",
       "check_name": "UnscopedFind",
       "message": "Unscoped call to `Post#find`",
@@ -24,6 +70,6 @@
       "note": ""
     }
   ],
-  "updated": "2024-05-08 17:18:09 +0900",
+  "updated": "2024-07-09 14:46:29 +0900",
   "brakeman_version": "6.1.2"
 }
