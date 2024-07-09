@@ -24,6 +24,7 @@ RSpec.describe 'Posts::Comments', type: :system do
     expect(mail.to.first).to eq 'taji@example.com'
     expect(mail.subject).to eq 'コメントが届きました'
     expect(mail.html_part.body).to include "/posts/#{taji_post.id}##{Comment.last.id}"
+    expect(mail.text_part.body).to include "/posts/#{taji_post.id}##{Comment.last.id}"
   end
 
   it '自身の投稿にコメントした場合、メールは送信されないこと' do
