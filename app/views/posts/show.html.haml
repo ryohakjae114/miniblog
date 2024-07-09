@@ -8,3 +8,5 @@
       = render 'shared/comment', comment:
 - else
   .text-center= t('.no_comment')
+
+= link_to t('posts.comments.new.title'), new_post_comment_path(@post), class: 'btn btn-primary float-end mt-3'

@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resource :profile, only: %i[edit update]
   resources :posts, only: %i[new create show], shallow: true do
     resources :likes, only: %i[index create destroy], module: 'posts'
+    resources :comments, only: %i[new create], module: 'posts'
   end
   namespace :following do
     resources :posts, only: %i[index]

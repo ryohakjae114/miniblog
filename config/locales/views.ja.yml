@@ -40,6 +40,9 @@ ja:
     likes:
       index:
         title: "いいねしたユーザ一覧(%{count}人)"
+    comments:
+      new:
+        title: "コメント作成"
   following:
     posts:
       index:
