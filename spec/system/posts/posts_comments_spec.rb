@@ -12,14 +12,14 @@ RSpec.describe 'Posts::Comments', type: :system do
 
   it '投稿にコメントができ、投稿主にメールを送信できること' do
     visit post_path(taji_post)
-    expect(ActionMailer::Base.deliveries.count).to eq 0
-    click_on 'コメント作成'
-    expect(page).to have_current_path new_post_comment_path(taji_post)
-    fill_in 'コメント',	with: 'Wryyyyyyy'
-    click_on '登録する'
-    expect(page).to have_content('新規登録しました')
-    expect(page).to have_selector('.comment-body', match: :first), text: 'Wryyyyyyy'
-    expect(ActionMailer::Base.deliveries.count).to eq 1
+    expect do
+      click_on 'コメント作成'
+      expect(page).to have_current_path new_post_comment_path(taji_post)
+      fill_in 'コメント',	with: 'Wryyyyyyy'
+      click_on '登録する'
+      expect(page).to have_content('新規登録しました')
+      expect(page).to have_selector('.comment-body', match: :first), text: 'Wryyyyyyy'
+    end.to change(ActionMailer::Base.deliveries, :count).by(1)
     mail = ActionMailer::Base.deliveries.last
     expect(mail.to.first).to eq 'taji@example.com'
     expect(mail.subject).to eq 'コメントが届きました'
@@ -28,8 +28,8 @@ RSpec.describe 'Posts::Comments', type: :system do
   end
 
   it '自身の投稿にコメントした場合、メールは送信されないこと' do
-    expect(ActionMailer::Base.deliveries.count).to eq 0
-    create(:comment, post: hakjae_post, user: hakjae)
-    expect(ActionMailer::Base.deliveries.count).to eq 0
+    expect do
+      create(:comment, post: hakjae_post, user: hakjae)
+    end.not_to change(ActionMailer::Base.deliveries, :count)
   end
 end
