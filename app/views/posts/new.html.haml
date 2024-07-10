@@ -1,5 +1,6 @@
 %h1.fs-2= t('.title')
 
 = simple_form_for @post do |f|
+  = f.input :picture
   = f.input :body
   = f.button :submit
