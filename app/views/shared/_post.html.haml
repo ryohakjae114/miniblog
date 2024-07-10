@@ -3,6 +3,8 @@
 .card.post
   .card-body.p-0.d-flex
     .w-100
+      - if post.picture.attached?
+        = image_tag post.picture.variant(:thumb), class: 'p-3'
       - if render_link_text
         = link_to post_path(post), class: 'd-block h-100 text-black text-decoration-none' do
           %p.h-100.fs-5.p-3= post.body
