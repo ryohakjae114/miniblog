@@ -12,6 +12,7 @@ ja:
         introduction: "紹介文"
         external_blog_url: "ブログURL"
       post:
+        picture: "写真"
         body: "投稿文"
       comment:
         body: "コメント"
