@@ -65,9 +65,9 @@ RSpec.configure do |config|
   # config.filter_gems_from_backtrace("gem name")
 
   # system specでは rack_test を使う
-  # config.before(:each) do |example|
-  #   if example.metadata[:type] == :system
-  #     driven_by(:rack_test)
-  #   end
-  # end
+  config.before(:each) do |example|
+    if example.metadata[:type] == :system
+      driven_by(:rack_test)
+    end
+  end
 end
