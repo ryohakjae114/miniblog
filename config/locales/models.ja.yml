@@ -20,3 +20,5 @@ ja:
       user:
         name:
           format: "は英文字のみが使えます。スペースは使用できません。"
+        picture:
+          allowed_picture_content_type: "はheic、jpeg、pngファイルのみアップロードできます。"
