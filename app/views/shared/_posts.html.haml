@@ -1,2 +1,2 @@
-- posts.includes(:user).includes([:picture_attachment]).find_each do |post|
+- posts.includes(:user).includes(picture_attachment: :blob).find_each do |post|
   = render 'shared/post', post:, render_link_text: true
