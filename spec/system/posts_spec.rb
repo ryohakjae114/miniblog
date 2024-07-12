@@ -24,7 +24,7 @@ RSpec.describe 'Posts', type: :system do
         click_button '登録する'
       end.to change(Post, :count).by(1)
       expect(page).to have_content('新規登録しました')
-      expect(page).to have_selector("img[src*='test.jpg']")
+      expect(page).to have_selector("img[src*='test.jpg'][picture_type='thumb']")
       expect(page).to have_content('今日はいい天気だわな')
     end
 
@@ -46,6 +46,12 @@ RSpec.describe 'Posts', type: :system do
       expect(page).to have_css('.comment'), count: 2
       expect(page).to have_content('役に立った')
       expect(page).to have_content('役に立たなかった')
+    end
+
+    it '投稿詳細ページにて、画像が表示されること' do
+      post.picture.attach(io: File.open(file_fixture('test.jpg')), filename: 'test.jpg')
+      visit post_path(post)
+      expect(page).to have_selector("img[src*='test.jpg'][picture_type='eyecatch']")
     end
   end
 end
