@@ -18,7 +18,7 @@ RSpec.describe 'Posts', type: :system do
 
     it '投稿できること' do
       visit new_post_path
-      attach_file '写真', file_fixture('test.jpg').read
+      attach_file '写真', file_fixture('test.jpg')
       fill_in '投稿文', with: '今日はいい天気だわな'
       expect do
         click_button '登録する'

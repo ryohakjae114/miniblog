@@ -34,7 +34,6 @@ end
 
 group :development do
   gem 'bullet'
-  gem 'fastimage'
   gem 'haml_lint'
   # NOTE: rails haml:erb2hamlをするために必要だった
   gem 'html2haml'
