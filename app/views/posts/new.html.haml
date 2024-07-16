@@ -1,5 +1,6 @@
 %h1.fs-2= t('.title')
 
 = simple_form_for @post do |f|
+  = f.input :picture, input_html: { accept: Post::ALLOWED_ACCEPT_FILE_EXTENSIONS.join(',') }
   = f.input :body
   = f.button :submit

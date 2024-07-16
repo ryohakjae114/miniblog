@@ -150,6 +150,12 @@ GEM
       railties (>= 5.0.0)
     faker (3.4.1)
       i18n (>= 1.8.11, < 2)
+    ffi (1.17.0-aarch64-linux-gnu)
+    ffi (1.17.0-arm-linux-gnu)
+    ffi (1.17.0-arm64-darwin)
+    ffi (1.17.0-x86-linux-gnu)
+    ffi (1.17.0-x86_64-darwin)
+    ffi (1.17.0-x86_64-linux-gnu)
     globalid (1.2.1)
       activesupport (>= 6.1)
     haml (6.3.0)
@@ -174,6 +180,9 @@ GEM
       ruby_parser (~> 3.5)
     i18n (1.14.5)
       concurrent-ruby (~> 1.0)
+    image_processing (1.12.2)
+      mini_magick (>= 4.9.5, < 5)
+      ruby-vips (>= 2.0.17, < 3)
     initial_avatar (0.2.2)
     io-console (0.7.2)
     irb (1.14.0)
@@ -204,6 +213,7 @@ GEM
       net-smtp
     marcel (1.0.4)
     matrix (0.4.2)
+    mini_magick (4.13.2)
     mini_mime (1.1.5)
     minitest (5.24.1)
     msgpack (1.7.2)
@@ -348,6 +358,8 @@ GEM
       rubocop (~> 1.61)
       rubocop-rspec (~> 3, >= 3.0.1)
     ruby-progressbar (1.13.0)
+    ruby-vips (2.2.1)
+      ffi (~> 1.12)
     ruby_parser (3.21.0)
       racc (~> 1.5)
       sexp_processor (~> 4.16)
@@ -427,6 +439,7 @@ DEPENDENCIES
   haml-rails
   haml_lint
   html2haml
+  image_processing
   initial_avatar
   jsbundling-rails
   letter_opener_web
