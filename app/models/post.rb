@@ -12,7 +12,7 @@ class Post < ApplicationRecord
   validate :allowed_picture_content_type
 
   def allowed_picture_content_type
-    if picture.attached? && !picture.content_type.in?(%('image/heic image/jpeg image/png'))
+    if picture.attached? && !picture.content_type.in?(%('image/heic image/jpeg image/png image/jpg'))
       errors.add(:picture, I18n.t('activerecord.validates.user.picture.allowed_picture_content_type'))
     end
   end
