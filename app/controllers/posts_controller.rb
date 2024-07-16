@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   before_action :set_post, only: [:show]
 
   def index
-    @posts = Post.order(created_at: :desc)
+    @posts = Post.order(created_at: :desc).includes(:user, picture_attachment: :blob)
   end
 
   def new
