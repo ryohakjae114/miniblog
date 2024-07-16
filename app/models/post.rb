@@ -12,7 +12,8 @@ class Post < ApplicationRecord
   validate :allowed_picture_content_type
 
   def self.yesterday_liked_ranking_top_ten
-    yesterday_range = DateTime.new(2024, 7, 16, 0, 0, 0)..DateTime.new(2024, 7, 16, 23, 59, 59)
+    now = Time.current
+    yesterday_range = now.yesterday.beginning_of_day...now.yesterday.end_of_day
     select('posts.*',
            'count(likes.id) AS likes').left_joins(:likes).where(likes: { created_at: yesterday_range }).group('posts.id').order('likes DESC').limit(10)
   end
