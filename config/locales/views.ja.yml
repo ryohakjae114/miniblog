@@ -55,3 +55,6 @@ ja:
     follow_button:
       follow: "フォローする"
       unfollow: "フォロー解除"
+  post_mailer:
+    notice_liked_ranking:
+      subject: "昨日のいいね数トップ10記事のお知らせ!"
