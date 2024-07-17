@@ -1,1 +1,8 @@
-%h1= t
+%h1= t('post_mailer.notice_liked_ranking.subject')
+
+%table.table
+  %tbody
+    - @posts.each_with_index do |post, i|
+      %tr
+        %td.text-nowrap.fs-2= t('post_mailer.notice_liked_ranking.rank', number: i + 1)
+        %td= link_to post.body, post_url(post), class: 'mt-2 d-block'

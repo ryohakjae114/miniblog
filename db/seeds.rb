@@ -7,6 +7,6 @@ user = User.create!(name: 'hakjae', password: '1234512345', password_confirmatio
     user.comments.create!(post:, body: Faker::Lorem.paragraph_by_chars(number: rand(10..140)))
   end
   unless n == 10
-    user.likes.create!(post:)
+    user.likes.create!(post:, created_at: yesterday_at, updated_at: yesterday_at)
   end
 end
