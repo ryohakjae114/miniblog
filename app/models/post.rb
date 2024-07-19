@@ -13,6 +13,13 @@ class Post < ApplicationRecord
   validates :body, presence: true, length: { maximum: 140 }
   validate :allowed_picture_content_type
 
+  def self.yesterday_liked_ranking_top_ten
+    now = Time.current
+    yesterday_range = now.yesterday.beginning_of_day...now.yesterday.end_of_day
+    select('posts.*',
+           'count(likes.id) AS likes').left_joins(:likes).where(likes: { created_at: yesterday_range }).group('posts.id').order('likes DESC').limit(10)
+  end
+
   def allowed_picture_content_type
     if picture.attached? && !picture.content_type.in?(ALLOWED_ACCEPT_FILE_EXTENSIONS)
       errors.add(:picture, I18n.t('activerecord.validates.user.picture.allowed_picture_content_type'))

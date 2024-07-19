@@ -1,4 +1,5 @@
 require 'rails_helper'
+require 'rake_helper'
 
 RSpec.describe 'Likes', type: :system do
   let!(:hakjae) { create(:user, name: 'hakjae') }
